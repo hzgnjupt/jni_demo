@@ -37,7 +37,7 @@ public class JniDemo {
     }
 
     /**
-     * 参数字符串
+     * 参数为字符串
      * 
      * @param data
      */
@@ -58,12 +58,38 @@ public class JniDemo {
         System.out.println(demo.retString());
     }
 
+    /**
+     * 参数和返回值为int类型
+     * 
+     * @param a
+     * @param b
+     */
+    public native int argretInt(int a, int b);
+
+    private static void testArgRetInt() {
+        System.out.println("1 + 2 = " + demo.argretInt(1, 2));
+    }
+
+    /**
+     * 参数和返回值为double类型
+     * 
+     * @param a
+     * @param b
+     */
+    public native double argretDouble(double a, double b);
+
+    private static void testArgRetDouble() {
+        System.out.println("100 / 3 = " + demo.argretDouble(100, 3));
+    }
+
     public static void main(String[] args) throws Exception {
 
         testArgByteArray();
         testRetByteArray();
         testArgString();
         testRetString();
+        testArgRetInt();
+        testArgRetDouble();
     }
 
 }

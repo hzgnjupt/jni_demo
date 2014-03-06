@@ -40,3 +40,15 @@ JNIEXPORT jstring JNICALL Java_hzgnjupt_demo_jni_JniDemo_retString
 {
 	return (*env)->NewStringUTF(env, "jni_demo: retString");
 }
+
+JNIEXPORT jint JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretInt
+  (JNIEnv *env, jobject obj, jint a, jint b)
+{
+	return a + b;
+}
+
+JNIEXPORT jdouble JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretDouble
+  (JNIEnv *env, jobject obj, jdouble a, jdouble b)
+{
+	return a / b;
+}
