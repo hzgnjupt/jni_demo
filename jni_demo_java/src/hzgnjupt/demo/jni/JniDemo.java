@@ -11,7 +11,7 @@ public class JniDemo {
     }
 
     /**
-     * ²ÎÊıÎª×Ö½ÚÊı×é
+     * å‚æ•°ä¸ºå­—èŠ‚æ•°ç»„
      * 
      * @param data
      * @param len
@@ -25,7 +25,7 @@ public class JniDemo {
     }
 
     /**
-     * ·µ»ØÖµÎª×Ö½ÚÊı×é
+     * è¿”å›å€¼ä¸ºå­—èŠ‚æ•°ç»„
      * 
      * @return
      */
@@ -37,7 +37,7 @@ public class JniDemo {
     }
 
     /**
-     * ²ÎÊıÎª×Ö·û´®
+     * å‚æ•°ä¸ºå­—ç¬¦ä¸²
      * 
      * @param data
      */
@@ -48,7 +48,7 @@ public class JniDemo {
     }
 
     /**
-     * ·µ»ØÖµÎª×Ö·û´®
+     * è¿”å›å€¼ä¸ºå­—ç¬¦ä¸²
      * 
      * @return
      */
@@ -58,12 +58,57 @@ public class JniDemo {
         System.out.println(demo.retString());
     }
 
+    /**
+     * å‚æ•°å’Œè¿”å›å€¼ä¸ºintç±»å‹
+     * 
+     * @param a
+     * @param b
+     */
+    public native int argretInt(int a, int b);
+
+    private static void testArgRetInt() {
+        System.out.println("1 + 2 = " + demo.argretInt(1, 2));
+    }
+
+    /**
+     * å‚æ•°å’Œè¿”å›å€¼ä¸ºdoubleç±»å‹
+     * 
+     * @param a
+     * @param b
+     */
+    public native double argretDouble(double a, double b);
+
+    private static void testArgRetDouble() {
+        System.out.println("100 / 3 = " + demo.argretDouble(100, 3));
+    }
+
+    /**
+     * å‚æ•°å’Œè¿”å›å€¼ä¸ºå¯¹è±¡
+     * 
+     * @param a
+     * @param b
+     */
+    public native Foo argretObj(Foo obj);
+
+    private static void testArgRetObj() {
+
+        Foo foo1 = new Foo(1, "a");
+        System.out.println("before argretObj: foo1 = " + foo1);
+        Foo foo2 = demo.argretObj(foo1);
+        System.out.println("after argretObj: foo1 = " + foo1);
+        System.out.println("after argretObj: foo2 = " + foo2);
+
+    }
+
     public static void main(String[] args) throws Exception {
 
         testArgByteArray();
         testRetByteArray();
         testArgString();
         testRetString();
+        testArgRetInt();
+        testArgRetDouble();
+        testArgRetObj();
     }
 
 }

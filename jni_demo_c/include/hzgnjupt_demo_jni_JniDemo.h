@@ -39,6 +39,30 @@ JNIEXPORT void JNICALL Java_hzgnjupt_demo_jni_JniDemo_argString
 JNIEXPORT jstring JNICALL Java_hzgnjupt_demo_jni_JniDemo_retString
   (JNIEnv *, jobject);
 
+/*
+ * Class:     hzgnjupt_demo_jni_JniDemo
+ * Method:    argretInt
+ * Signature: (II)I
+ */
+JNIEXPORT jint JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretInt
+  (JNIEnv *, jobject, jint, jint);
+
+/*
+ * Class:     hzgnjupt_demo_jni_JniDemo
+ * Method:    argretDouble
+ * Signature: (DD)D
+ */
+JNIEXPORT jdouble JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretDouble
+  (JNIEnv *, jobject, jdouble, jdouble);
+
+/*
+ * Class:     hzgnjupt_demo_jni_JniDemo
+ * Method:    argretObj
+ * Signature: (Lhzgnjupt/demo/jni/Foo;)Lhzgnjupt/demo/jni/Foo;
+ */
+JNIEXPORT jobject JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretObj
+  (JNIEnv *, jobject, jobject);
+
 #ifdef __cplusplus
 }
 #endif

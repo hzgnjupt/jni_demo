@@ -40,3 +40,32 @@ JNIEXPORT jstring JNICALL Java_hzgnjupt_demo_jni_JniDemo_retString
 {
 	return (*env)->NewStringUTF(env, "jni_demo: retString");
 }
+
+JNIEXPORT jint JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretInt
+  (JNIEnv *env, jobject obj, jint a, jint b)
+{
+	return a + b;
+}
+
+JNIEXPORT jdouble JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretDouble
+  (JNIEnv *env, jobject obj, jdouble a, jdouble b)
+{
+	return a / b;
+}
+
+JNIEXPORT jobject JNICALL Java_hzgnjupt_demo_jni_JniDemo_argretObj
+  (JNIEnv *env, jobject obj, jobject foo)
+{
+	jclass class_Foo = (*env)->GetObjectClass(env,foo);
+	jfieldID fdNumber = (*env)->GetFieldID(env,class_Foo,"number","I");
+	jfieldID fdStr = (*env)->GetFieldID(env,class_Foo,"str","Ljava/lang/String;");
+	jmethodID mdcstr = (*env)->GetMethodID(env, class_Foo, "<init>", "(ILjava/lang/String;)V");
+	jobject objFoo2;
+
+	(*env)->SetIntField(env, foo, fdNumber, 2);
+	(*env)->SetObjectField(env, foo, fdStr, (*env)->NewStringUTF(env, "b"));
+
+	objFoo2 = (*env)->NewObject(env, class_Foo, mdcstr, 3, (*env)->NewStringUTF(env, "c"));
+
+	return objFoo2;
+}
