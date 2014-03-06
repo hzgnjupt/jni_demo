@@ -7,7 +7,7 @@ public class JniDemo {
     private static JniDemo demo = new JniDemo();
 
     static {
-        System.loadLibrary("jni_demo");
+        System.loadLibrary("jni_demo_c");
     }
 
     /**

@@ -2,3 +2,7 @@
 /bin
 /.classpath
 /.project
+/jni_demo_c.exp
+/jni_demo_c.ilk
+/jni_demo_c.lib
+/jni_demo_c.pdb
