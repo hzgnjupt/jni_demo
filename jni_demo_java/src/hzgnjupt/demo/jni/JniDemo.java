@@ -11,7 +11,7 @@ public class JniDemo {
     }
 
     /**
-     * ²ÎÊıÎª×Ö½ÚÊı×é
+     * å‚æ•°ä¸ºå­—èŠ‚æ•°ç»„
      * 
      * @param data
      * @param len
@@ -25,7 +25,7 @@ public class JniDemo {
     }
 
     /**
-     * ·µ»ØÖµÎª×Ö½ÚÊı×é
+     * è¿”å›å€¼ä¸ºå­—èŠ‚æ•°ç»„
      * 
      * @return
      */
@@ -37,7 +37,7 @@ public class JniDemo {
     }
 
     /**
-     * ²ÎÊıÎª×Ö·û´®
+     * å‚æ•°å­—ç¬¦ä¸²
      * 
      * @param data
      */
@@ -48,7 +48,7 @@ public class JniDemo {
     }
 
     /**
-     * ·µ»ØÖµÎª×Ö·û´®
+     * è¿”å›å€¼ä¸ºå­—ç¬¦ä¸²
      * 
      * @return
      */
